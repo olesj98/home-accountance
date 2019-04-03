@@ -1,0 +1,46 @@
+<article class="content">
+    <div class="title-block">
+        <h3 class="title">
+            Planing page <span class="sparkline bar"></span>
+        </h3>
+    </div>
+    <section class="section" *ngIf="!isLoaded"><app-loader></app-loader></section>
+    <section class="section" *ngIf="isLoaded">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-sm bordered">
+                        <div class="header-block">
+                            <h3 class="title">Outcomes</h3>
+                        </div>
+                        <h5 class="planning-expenses pull-right">
+                            All rest money: <span class="text-success">{{bill.value | number:'1.2'}}</span>
+                        </h5>
+                    </div>
+                    <div class="card-block">
+
+                        <div class="row" *ngFor="let c of categories">
+                            <div class="col-xs-6">
+                                <div class="n-progress">
+                                    <div class="progress-bar {{getCatColor(c)}}" [ngStyle]="{'width': getCatPercent(c)}">
+                                        <span>{{c.name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <p>
+                                    <span class="text-{{getCatColor(c)}}">{{getCategoryCost(c) | number:'1.2'}}</span>
+                                    from
+                                    <span class="text-primary">{{c.capacity | number:'1.2'}}</span>
+                                    |
+                                    rest <span class="text-{{getCatColor(c)}}">{{c.capacity - getCategoryCost(c) | number:'1.2'}}</span> (eur.)
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</article>

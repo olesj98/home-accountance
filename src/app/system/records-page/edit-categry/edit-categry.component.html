@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="card-header bordered">
+        <div class="header-block">
+            <h3 class="title">Edit Category</h3>
+        </div>
+    </div>
+    <div class="card-block">
+        <div class="alert alert-{{message.type}}" *ngIf="message.text">{{message.text}}</div>
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <div class="form-group">
+                <label for="e-select-category" class="control-label">Choose category</label>
+                <select 
+                    class="form-control" 
+                    id="e-select-category"
+                    [(ngModel)]="currentCategoryId"
+                    [ngModelOptions]="{standalone: true}"
+                    (change)="onCategoryChange()"
+                >
+                    <option 
+                        *ngFor="let category of categories" 
+                        [value]="category.id">
+                        {{category.name}}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group" [ngClass]="{'has-error': name.invalid && name.touched}">
+                <label class="control-label" for="e-category-name">Enter name</label>
+                <input 
+                    type="text" 
+                    id="e-category-name" 
+                    class="form-control"
+                    required
+                    #name="ngModel"
+                    name="name"
+                    [ngModel]="currentCategory.name"
+                >
+                <span class="form-help-text" *ngIf="name.invalid && name.touched">Empty input</span>
+            </div>
+            <div class="form-group" [ngClass]="{'has-error': value.invalid && value.touched}">
+                <label class="control-label" for="category-value">Enter limit</label>
+                <input 
+                    type="number" 
+                    value="0"  
+                    class="form-control"
+                    [ngModel]="currentCategory.capacity"
+                    name="value"
+                    #value="ngModel"
+                    required
+                    min="1"
+                >
+                <span class="form-help-text" *ngIf="value.invalid && value.touched">Empty value</span>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Edit</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="card">
+    <div class="card-header bordered">
+        <div class="header-block">
+            <h3 class="title">Add event</h3>
+        </div>
+    </div>
+    <div class="card-block">
+        <div class="alert alert-{{message.type}}" *ngIf="message.text">
+            {{message.text}}
+        </div>
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <div class="form-group">
+                <label class="control-label" for="category">Choose category</label>
+                <select 
+                    class="form-control" 
+                    id="category" 
+                    [ngModel]="1"
+                    name="category"
+                    required
+                    >
+                    <option *ngFor="let c of categories" [value]="c.id">{{c.name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Choose type</label>
+                <div *ngFor="let t of types">
+                    <label>
+                        <input 
+                            class="radio" 
+                            name="type" 
+                            type="radio"
+                            required
+                            [value]="t.type"
+                            [ngModel]="'outcome'"
+                            >
+                        <span>{{t.label}}</span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group"
+                [ngClass]="{'has-error': false}">
+                <label class="control-label" for="amount">Enter outcome</label>
+                <input 
+                    type="number" 
+                    value="0" 
+                    id="amount" 
+                    class="form-control" 
+                    name="amount" 
+                    [ngModel]="1"
+                    min="1"
+                    #amount="ngModel"
+                    >
+                <span class="form-help-text" *ngIf="amount.invalid && amount.touched">
+                    Should not be empty
+                </span>
+            </div>
+            <div class="form-group"
+            [ngClass]="{'has-error': false}">
+            <label class="control-label" for="description">Description</label>
+            <input 
+                type="text" 
+                id="description" 
+                class="form-control" 
+                name="description" 
+                ngModel
+                required
+                #descriplion="ngModel"
+                >
+            <span class="form-help-text" *ngIf="descriplion.invalid && descriplion.touched">
+                Should not be empty
+            </span>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Add</button>
+        </form>
+    </div>
+</div>

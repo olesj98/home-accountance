@@ -1,0 +1,53 @@
+<div class="modal fade in" >
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header ">
+            <h4 class="modal-title">Filter</h4>
+            <button type="button" class="close" (click)="closeFilter()">
+                <span>x</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+            <label class="control-label" for="period">Choose period</label>
+            <select class="form-control" id="period" [(ngModel)]="selectedPeriod">
+                <option *ngFor="let p of timePeriods" [value]="p.type">{{p.label}}</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <label class="control-label">Choose type of event</label>
+            <div>
+                <label 
+                    *ngFor="let t of types" >
+                    <input
+                        class="checkbox"
+                        type="checkbox"
+                        (change)="handleChangeType($event.target)"
+                        [value]="t.type"
+                    >
+                    <span >{{t.label}}</span>
+                </label>
+            </div>
+            </div>
+            <div class="form-group">
+            <label class="control-label">Choose category of event</label>
+            <div>
+                <label *ngFor="let c of categories">
+                <input
+                    class="checkbox"
+                    type="checkbox"
+                    [value]="c.id"
+                    (change)="changeCategory($event.target)"
+                >
+                <span>{{c.name}}</span>
+                </label>
+            </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="closeFilter()">Cancell</button>
+            <button type="button" class="btn btn-primary" (click)="applyFilter()">Apply</button>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "churaolesj86@gmail.com",
+      "password": "olesj050298",
+      "name": "admin"
+    },
+    {
+      "email": "olesj98@meta.ua",
+      "password": "050298",
+      "name": "Olesj",
+      "id": 2
+    }
+  ],
+  "bill": {
+    "value": 97900,
+    "currency": "EUR"
+  },
+  "categories": [
+    {
+      "name": "House",
+      "capacity": 15000,
+      "id": 1
+    },
+    {
+      "name": "Food",
+      "capacity": 10000,
+      "id": 2
+    },
+    {
+      "name": "Car",
+      "capacity": 7000,
+      "id": 3
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "type": "income",
+      "amount": 1250,
+      "category": 2,
+      "date": "12.06.2017 19:49:02",
+      "description": "Подарили еду в гостях"
+    },
+    {
+      "id": 2,
+      "type": "outcome",
+      "amount": 1300,
+      "category": 1,
+      "date": "13.06.2017 19:49:02",
+      "description": "Купил посудомоечную машину"
+    },
+    {
+      "type": "income",
+      "amount": 1480,
+      "category": 2,
+      "date": "17.06.2017 14:00:48",
+      "id": 3,
+      "description": "Поход в окей с баллами. Бесплатная еда"
+    },
+    {
+      "type": "outcome",
+      "amount": 2470,
+      "category": 2,
+      "date": "17.06.2017 14:00:58",
+      "id": 4,
+      "description": "Закупка на неделю"
+    },
+    {
+      "type": "outcome",
+      "amount": 4000,
+      "category": 3,
+      "date": "10.06.2017 14:01:58",
+      "id": 5,
+      "description": "Заправка + проход ТО"
+    },
+    {
+      "type": "outcome",
+      "amount": 111,
+      "category": 1,
+      "date": "26.03.2019 19:26:34",
+      "description": "Test2",
+      "id": 6
+    },
+    {
+      "type": "income",
+      "amount": 111,
+      "category": 1,
+      "date": "26.03.2019 19:38:15",
+      "description": "Test1",
+      "id": 7
+    },
+    {
+      "type": "outcome",
+      "amount": 1000,
+      "category": 3,
+      "date": "28.03.2019 16:10:39",
+      "description": "Test",
+      "id": 8
+    },
+    {
+      "type": "outcome",
+      "amount": 1000,
+      "category": 1,
+      "date": "28.03.2019 16:11:53",
+      "description": "Test",
+      "id": 9
+    }
+  ]
+}

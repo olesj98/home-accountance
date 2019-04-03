@@ -1,0 +1,23 @@
+<article class="content">
+    <div class="title-block">
+        <h3 class="title">
+            Records page <span class="sparkline bar"></span>
+        </h3>
+    </div>
+    <div class="row" *ngIf="!isLoaded"><app-loader></app-loader></div>
+    <section class="section" *ngIf="isLoaded">
+        <div class="row">
+            <div class="col-md-6">
+                <app-add-event [categories]="categories"></app-add-event>
+            </div>
+            <div class="col-md-6">
+                <app-add-categry (onCategoryAdd)="newCategoryAdd($event)"></app-add-categry>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <app-edit-categry [categories]="categories" (onCategoryEdit)="newCategoryEdit($event)"></app-edit-categry>
+            </div>
+        </div>
+    </section>
+</article>
