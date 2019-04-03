@@ -53,7 +53,7 @@ export class AddEventComponent implements OnInit {
     if(amount<0) amount *=(-1);
 
     const event = new AppEvent(
-      type, +amount, category,
+      type, +amount, +category,
       moment().format('DD.MM.YYYY HH:mm:ss'),
       description);
     this.sub1 = this.billService.getBill()

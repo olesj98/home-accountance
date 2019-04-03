@@ -14,7 +14,7 @@
     }
   ],
   "bill": {
-    "value": 97900,
+    "value": 94589,
     "currency": "EUR"
   },
   "categories": [
@@ -32,6 +32,16 @@
       "name": "Car",
       "capacity": 7000,
       "id": 3
+    },
+    {
+      "name": "TestCategory",
+      "capacity": 10000,
+      "id": 4
+    },
+    {
+      "name": "TestCat2",
+      "capacity": 100,
+      "id": 5
     }
   ],
   "events": [
@@ -106,6 +116,54 @@
       "date": "28.03.2019 16:11:53",
       "description": "Test",
       "id": 9
+    },
+    {
+      "type": "outcome",
+      "amount": 100,
+      "category": 2,
+      "date": "03.04.2019 16:08:59",
+      "description": "Test",
+      "id": 10
+    },
+    {
+      "type": "outcome",
+      "amount": 1000,
+      "category": 4,
+      "date": "03.04.2019 16:11:22",
+      "description": "Test",
+      "id": 11
+    },
+    {
+      "type": "outcome",
+      "amount": 100,
+      "category": 4,
+      "date": "03.04.2019 16:35:37",
+      "description": "Test2",
+      "id": 12
+    },
+    {
+      "type": "outcome",
+      "amount": 1100,
+      "category": 4,
+      "date": "03.04.2019 16:39:33",
+      "description": "Test",
+      "id": 13
+    },
+    {
+      "type": "outcome",
+      "amount": 11,
+      "category": 5,
+      "date": "03.04.2019 16:40:19",
+      "description": "Test",
+      "id": 14
+    },
+    {
+      "type": "outcome",
+      "amount": 1000,
+      "category": 5,
+      "date": "03.04.2019 16:42:34",
+      "description": "Test",
+      "id": 15
     }
   ]
 }

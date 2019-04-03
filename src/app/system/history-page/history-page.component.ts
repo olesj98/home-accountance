@@ -48,6 +48,7 @@ export class HistoryPageComponent implements OnInit {
         this.categories = data[0];
         this.events = data[1];
 
+        this.addCatName();
         this.setOriginalEvents();
         this.calcChartData();
         this.isLoaded = true;
@@ -57,6 +58,12 @@ export class HistoryPageComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.sub1.unsubscribe();
+  }
+
+  addCatName(){
+    this.events.forEach((e) => {
+      e.catName = this.categories.find((c) => c.id === e.category).name;
+    });
   }
 
   private setOriginalEvents(){

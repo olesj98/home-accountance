@@ -21,16 +21,6 @@ export class HistoryEventComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.intervalCheckIfLoaded = window.setInterval(this.addCatName.bind(this), 200);
-  }
-
-  addCatName(){
-    if (this.isLoaded){
-      this.events.forEach((e) => {
-        e.catName = this.categories.find((c) => c.id === e.category).name;
-      });
-      window.clearInterval(this.intervalCheckIfLoaded);
-    }
   }
 
   changeCriteria(field: string){
