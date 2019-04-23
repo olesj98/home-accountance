@@ -2,19 +2,19 @@
   "users": [
     {
       "id": 1,
-      "email": "churaolesj86@gmail.com",
-      "password": "olesj050298",
+      "email": "churaolesj@gmail.com",
+      "password": "12345678",
       "name": "admin"
     },
     {
-      "email": "olesj98@meta.ua",
-      "password": "050298",
+      "email": "olesj@meta.ua",
+      "password": "12345678",
       "name": "Olesj",
       "id": 2
     }
   ],
   "bill": {
-    "value": 94589,
+    "value": 93689,
     "currency": "EUR"
   },
   "categories": [
@@ -39,9 +39,14 @@
       "id": 4
     },
     {
-      "name": "TestCat2",
+      "name": "TestCat",
       "capacity": 100,
       "id": 5
+    },
+    {
+      "name": "Test1",
+      "capacity": 1000,
+      "id": 6
     }
   ],
   "events": [
@@ -164,6 +169,22 @@
       "date": "03.04.2019 16:42:34",
       "description": "Test",
       "id": 15
+    },
+    {
+      "type": "income",
+      "amount": 100,
+      "category": 4,
+      "date": "04.04.2019 15:20:38",
+      "description": "Test",
+      "id": 16
+    },
+    {
+      "type": "outcome",
+      "amount": 1000,
+      "category": 6,
+      "date": "04.04.2019 15:21:50",
+      "description": "Test",
+      "id": 17
     }
   ]
 }
